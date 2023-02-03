@@ -19,6 +19,23 @@ public class BinarySearchTree {
         return null;
     }
     public void delete(Integer data){
+        TreeNode toDelete = find(data);
+        toDelete.isDeleted();
+    }
+    public Integer smallest(){
+        if (this.root != null){
+            return root.smallest();
+        }
+        return null;
+    }
+    public Integer largest(){
+        if (this.root != null){
+            return root.largest();
+        }
+        return null;
+    }
+    /*
+    public void delete(Integer data){
         TreeNode current = this.root;
         TreeNode parentt = this.root;
         boolean isLeftChild = false;
@@ -51,6 +68,28 @@ public class BinarySearchTree {
                 }
             }
         }
+        else if(current.getRightChild() == null){
+            if (current == root){
+                root = current.getLeftChild();
+            }else if (isLeftChild){
+                parentt.setLeftChild(current.getLeftChild());
+            }else {
+                parentt.setRightChild(current.getLeftChild());
+            }
+        }
+        else if(current.getLeftChild() == null){
+            if (current == root){
+                root = current.getRightChild();
+            }else if (isLeftChild){
+                parentt.setLeftChild(current.getRightChild());
+            }else {
+                parentt.setRightChild(current.getRightChild());
+            }
+        }
+
+
 
     }
+      */
+
 }
