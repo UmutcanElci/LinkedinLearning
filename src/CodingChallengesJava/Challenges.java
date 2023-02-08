@@ -23,6 +23,7 @@ public class Challenges {
         Must have one lowercase letter
         Must have one number
          */
+        /*
         if (password.length()<6){
             return false;
         }
@@ -46,5 +47,15 @@ public class Challenges {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
+*/
+        //With regEx
+        return password.length() >= 6
+                && password.matches(".*\\d.*")
+                && password.matches(".*[a-z].*")
+                && password.matches(".*[A-Z.*]");
+       }
     }
-}
+
+
+
+
