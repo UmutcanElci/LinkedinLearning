@@ -1,7 +1,5 @@
 package JavaByExample;
 
-import IntroToDataStructuresAndAlgorithms.Recursion.Factorial;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -97,10 +95,6 @@ public class FileSearchApp {
         }
     }
 
-
-
-
-
     public boolean searchFileJava6(File file) throws FileNotFoundException {
         boolean found = false;
         Scanner scanner = new Scanner(file, "UTF-8");
@@ -111,12 +105,6 @@ public class FileSearchApp {
         scanner.close();
         return found;
     }
-
-
-
-
-
-
 
     public boolean searchFileJava7(File file) throws IOException {
         List<String> lines = Files.readAllLines(file.toPath(),
@@ -129,40 +117,15 @@ public class FileSearchApp {
         return false;
     }
 
-
-
-
-
-
-
-
-
-
-
     public boolean searchFileJava8(File file) throws IOException {
         return Files.lines(file.toPath(), StandardCharsets.UTF_8)
                 .anyMatch(t -> searchText(t));
     }
 
-
-
-
-
-
-
-
-
-
-
-
     public boolean searchText(String text) {
         return (this.getRegex() == null) ?  true :
                 this.pattern.matcher(text).matches();
     }
-
-
-
-
 
     public String getRelativeFilename(File file, File baseDir) {
         String fileName = file.getAbsolutePath().substring(
@@ -180,14 +143,14 @@ public class FileSearchApp {
 
 
 
-
+/*
     public void zipFilesJava6() throws IOException {
         ZipOutputStream out = null;
         try {
             out = new ZipOutputStream(new FileOutputStream(getZipFileName()));
             File baseDir = new File(getPath());
 
-            for (File file : zipFileName) {
+            for (File file : zipFile) {
                 // fileName must be a relative path, not an absolute one.
                 String fileName = getRelativeFilename(file, baseDir);
 
@@ -212,13 +175,14 @@ public class FileSearchApp {
         }
     }
 
-
+ */
+    /*
     public void zipFilesJava7() throws IOException {
         try (ZipOutputStream out =
                      new ZipOutputStream(new FileOutputStream(getZipFileName())) ) {
             File baseDir = new File(getPath());
 
-            for (File file : zipFileName) {
+            for (File file : zipFile) {
                 // fileName must be a relative path, not an absolute one.
                 String fileName = getRelativeFilename(file, baseDir);
 
@@ -233,9 +197,7 @@ public class FileSearchApp {
         }
     }
 
-
-
-
+     */
 
 
     public String getPath() {
